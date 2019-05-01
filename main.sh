@@ -26,6 +26,7 @@ if ! [ -x "$(command -v pip )" || -x "$(command -v pip3 )" ]; then
 fi
 $sudo pip install pipenv
 $sudo pip3 install pipenv
+$sudo pip install --upgrade pip
 
 # Powerline
 $sudo pip install --user git+git://github.com/powerline/powerline
@@ -33,5 +34,11 @@ $sudo pip install --user powerline-status
 $sudo pip install --user ipython
 
 # vim runtime
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
+VIM_FILE="~/.vim_runtime"
+if [ -d $VIM_FILE ]; then
+    echo "$VIM_FILE exist"
+else
+    echo "$VIM_FILE does not exist"
+    git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+    sh ~/.vim_runtime/install_awesome_vimrc.sh
+fi

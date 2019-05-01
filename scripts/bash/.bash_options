@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Automatically prepend `cd` to directory names.
 shopt -s autocd
 

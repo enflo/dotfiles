@@ -11,12 +11,12 @@ test -e $FILE || { echo "Please run script from the install.sh directory"; exit;
 
 # Move some files to $HOME
 ## Bash Config
-mv /scripts//bash $HOME/bash_settings
-mv /scripts/bash/.bashrc $HOME
-mv /scripts/bash/.bash_aliases $HOME
-mv /scripts/bash/.functions $HOME
-mv /scripts/bash/.bash_profile $HOME
+echo $PWD
+cp scripts/bash/.bashrc $HOME
+cp scripts/bash/.bash_profile $HOME
+cp -R scripts/bash $HOME/bash_settings
+
 
 ## Git config
-mv /scripts/git/.gitignore_global $HOME
-mv /scripts/git/.gitconfig $HOME
+cp scripts/git/.gitignore_global $HOME
+cp scripts/git/.gitconfig $HOME

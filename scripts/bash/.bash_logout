@@ -1,6 +1,3 @@
-
-#!/bin/bash
-
 # Clear console on exit.
 
 [ "$SHLVL" == 1 ] \

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # [!] Do not rename this file to `bash_completion`
 #     as it will create an infinite loop!
 

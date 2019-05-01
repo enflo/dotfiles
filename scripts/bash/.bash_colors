@@ -1,7 +1,3 @@
-#!/bin/bash
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Set LS_COLORS (GNU).
 #
 #  - `ls` displays colors if the `--color` option is passed.
