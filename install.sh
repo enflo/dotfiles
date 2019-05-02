@@ -6,17 +6,25 @@ FILE="$PWD/install.sh"
 test -e $FILE || { echo "Please run script from the install.sh directory"; exit; }
 
 # install all the things
+echo "Start of installation"
+echo "---------------------------------------------------------"
+echo "Basic installation"
+
 ./main.sh
+
+echo "You have completed the basic installation"
+echo "---------------------------------------------------------"
+echo "APPS installation"
+
 ./apps.sh
 
-# Move some files to $HOME
-## Bash Config
-echo $PWD
-cp scripts/bash/.bashrc $HOME
-cp scripts/bash/.bash_profile $HOME
-cp -R scripts/bash $HOME/bash_settings
+echo "You have completed the APPS installation"
+echo "---------------------------------------------------------"
+echo "Shell promt installation"
 
+./shell.sh
 
-## Git config
-cp scripts/git/.gitignore_global $HOME
-cp scripts/git/.gitconfig $HOME
+echo "You have completed the Shell promt installation"
+echo "---------------------------------------------------------"
+echo " INSTALLATION COMPELTE"
+echo "have a nice day"
