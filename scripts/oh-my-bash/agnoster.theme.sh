@@ -81,7 +81,7 @@ debug() {
 
 CURRENT_BG='NONE'
 CURRENT_RBG='NONE'
-SEGMENT_SEPARATOR=''
+SEGMENT_SEPARATOR=$'\ue0b0'
 RIGHT_SEPARATOR=''
 LEFT_SUBSEG=''
 RIGHT_SUBSEG=''
@@ -414,9 +414,8 @@ set_bash_prompt() {
     CURRENT_BG=NONE
     PR="$(ansi_single $(text_effect reset))"
     build_prompt
-
     # uncomment below to use right prompt
-    #     PS1='\[$(tput sc; printf "%*s" $COLUMNS "$PRIGHT"; tput rc)\]'$PR
+    #PS1='\[$(tput sc; printf "%*s" $COLUMNS "$PRIGHT"; tput rc)\]'$PR
     PS1=$PR
 }
 
