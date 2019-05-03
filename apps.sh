@@ -18,12 +18,15 @@ fi
 
 # Git desktop app
 if ! [ -x "$(command -v gitkraken )" ]; then
-    $sudo snap install gitkraken
+    $sudo apt install libcurl3
+    $sudo ln -s /usr/lib64/libcurl.so.4 /usr/lib64/libcurl-gnutls.so.4
+    wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+    $sudo dpkg -i gitkraken-amd64.deb
 fi
 
 # Communication
 if ! [ -x "$(command -v slack )" ]; then
-    $sudo snap install slack
+    $sudo apt-get upgrade slack-desktop
 fi
 
 # Docker
@@ -41,14 +44,11 @@ if ! [ -x "$(command -v docker-composer )" ]; then
     $sudo chmod +x /usr/local/bin/docker-compose
 fi
 
-# Postman
-if ! [ -x "$(command -v postman )" ]; then
-    $sudo snap install postman
-fi
-
 # Spotify
 if ! [ -x "$(command -v spotify )" ]; then
-    $sudo snap install spotify
+    $sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+    echo deb http://repository.spotify.com stable non-free | $sudo tee /etc/apt/sources.list.d/spotify.list
+    $sudo apt update apt install -y spotify-client
 fi
 
 # HTOP
@@ -65,7 +65,7 @@ fi
 
 ## Firefox
 if ! [ -x "$(command -v firefox )" ]; then
-    snap install firefox
+    $sudo apt install -y firefox
 fi
 
 ## Zoom
