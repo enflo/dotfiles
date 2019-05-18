@@ -27,18 +27,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# Export theme
-export THEME=$HOME/.bash/themes/agnoster-bash/agnoster.bash
-if [[ -f $THEME ]]; then
-    export DEFAULT_USER='toni'
-    source $THEME
-fi
-
-# Use bash aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # Init Python
 PATH=$PATH:$HOME/.pyenv/bin
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi

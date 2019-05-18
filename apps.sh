@@ -44,6 +44,10 @@ if ! [ -x "$(command -v docker-composer )" ]; then
     $sudo chmod +x /usr/local/bin/docker-compose
 fi
 
+# CTOP
+$sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.2/ctop-0.7.2-linux-amd64 -O /usr/local/bin/ctop
+$sudo chmod +x /usr/local/bin/ctop
+
 # Spotify
 if ! [ -x "$(command -v spotify )" ]; then
     $sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90

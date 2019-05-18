@@ -17,3 +17,15 @@ export HISTSIZE=10000
 # Prefer US English and use UTF-8 encoding.
 export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
+
+if [ -f /usr/local/bin/kubectl ]; then
+  export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+  # Kubernetes autocompletion
+  source <(kubectl completion bash)
+  export GPG_TTY=$(tty)
+fi
+
+#Go PATH
+export GOROOT=/usr/lib/Go
+export GOPATH=$HOME/Go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
