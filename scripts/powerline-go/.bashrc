@@ -7,8 +7,8 @@ if [ -f $HOME/bash_settings/.bash_autocomplete ]; then
     source $HOME/bash_settings/.bash_autocomplete
 fi
 
-if [ -f $HOME/bash_settings/.colors ]; then
-    source $HOME/bash_settings/.colors
+if [ -f $HOME/bash_settings/.bash_colors ]; then
+    source $HOME/bash_settings/.bash_colors
 fi
 
 if [ -f $HOME/bash_settings/.bash_logout ]; then
@@ -26,6 +26,8 @@ fi
 if [ -f $HOME/bash_settings/.bash_exports ]; then
     source $HOME/bash_settings/.bash_exports
 fi
+
+GOPATH=$HOME/go
 
 function _update_ps1() {
     PS1="$($GOPATH/bin/powerline-go -error $? -modules-right kube -shorten-gke-names)"
