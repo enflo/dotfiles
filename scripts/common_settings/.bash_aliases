@@ -68,4 +68,11 @@ alias local-ip="ifconfig \
                     | cut -d' ' -f1"
 # KUBERNETES ALIAS
 alias k='kubectl'
+alias ka='kubectl apply -f'
+alias kg='kubectl get'
+alias kgp='kubectl get po'
+alias kgi='kubectl get ingress'
+alias kgss='kubectl get secret'
+alias kgsv='kubectl get service'
+alias kgc='kubectl get configmap'
 alias kctx="kubectl config use-context"
