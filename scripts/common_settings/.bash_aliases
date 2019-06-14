@@ -68,7 +68,4 @@ alias local-ip="ifconfig \
                     | cut -d' ' -f1"
 # KUBERNETES ALIAS
 alias k='kubectl'
-alias kadmin='kubectl --namespace=admin'
-alias kcronjob='kubectl --namespace=cronjob'
-alias kprod='kubectl --namespace=production'
 alias kctx="kubectl config use-context"
