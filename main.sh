@@ -34,16 +34,19 @@ $sudo pip install --user powerline-status
 $sudo pip install --user ipython
 
 # vim runtime
-VIM_FILE="~/.vim_runtime"
-if [ -d $VIM_FILE ]; then
-    echo "$VIM_FILE exist"
-else
-    echo "$VIM_FILE does not exist"
-    git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-    sh ~/.vim_runtime/install_awesome_vimrc.sh
-fi
+#VIM_FILE="~/.vim_runtime"
+#if ! [ -d $VIM_FILE ]; then
+#    echo "$VIM_FILE does not exist"
+#    git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+#    sh ~/.vim_runtime/install_awesome_vimrc.sh
+#fi
+
+#tweak
+$sudo add-apt-repository universe
+$sudo apt update
+$sudo apt install -y gnome-tweak-tool
 
 #theme
 $sudo add-apt-repository ppa:numix/ppa
 $sudo apt update
-$sudo apt install numix-icon-theme-circle
+$sudo apt install -y numix-icon-theme-circle

@@ -10,10 +10,10 @@ fi
 # Editors
 ## VSCODE
 if ! [ -x "$(command -v code )" ]; then
-    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | $sudo apt-key add -
     $sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-    $sudo apt updates &&  apt install code -y
-    code --install-extension shan.code-settings-sync
+    $sudo apt update && $sudo apt install code -y
+    '/usr/share/code/bin/code' --install-extension shan.code-settings-sync
 fi
 
 # Git desktop app
@@ -33,7 +33,7 @@ fi
 if ! [ -x "$(command -v docker )" ]; then
     $sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     $sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-    $sudo apt update && apt install -y docker-ce
+    $sudo apt update && $sudo apt install -y docker-ce
     $sudo systemctl status docker
     $sudo usermod -aG docker $USER
 fi

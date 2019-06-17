@@ -28,3 +28,11 @@ echo "You have completed the Shell promt installation"
 echo "---------------------------------------------------------"
 echo " INSTALLATION COMPELTE"
 echo "have a nice day"
+
+## Clean
+sudo=''
+ if [ "$EUID" -ne 0 ]; then
+     sudo="sudo"
+ fi
+
+$sudo apt autoremove

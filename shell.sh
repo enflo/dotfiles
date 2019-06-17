@@ -37,7 +37,9 @@ install_bash (){
 }
 
 ## Powerline Go config
-powerline-go(){
+powerline-go (){
+    git clone git@github.com:ryanoasis/nerd-fonts.git
+    scripts/nerd-fonts/install.sh
     cp scripts/powerline-go/.bash_profile $HOME/.bash_profile
     cp scripts/powerline-go/.bashrc $HOME/.bashrc
     cp -R scripts/common_settings $HOME/bash_settings
