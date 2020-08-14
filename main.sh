@@ -22,9 +22,8 @@ fi
 
 ## Python
 if ! [ -x "$(command -v pip )" || -x "$(command -v pip3 )" ]; then
-    $sudo apt install -y python-pip python3-pip
+    $sudo apt install -y python3-pip
 fi
-$sudo pip install pipenv
 $sudo pip3 install pipenv
 $sudo pip install --upgrade pip
 
